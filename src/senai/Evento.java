@@ -19,11 +19,11 @@ public abstract class Evento implements Agendamento {
 	 * @param data data do evento
 	 * @param organizador organizador do evento
 	 */
-	public Evento(String nome, LocalDate data, Usuario organizador) {
+	public Evento(String nome, LocalDate data, Usuario organizador, List<Usuario> participantes) {
 		this.nome = nome;
 		this.data = data;
 		this.organizador = organizador;
-		this.participantes = new ArrayList<Usuario>();
+		this.participantes = new MeuArrayList<Usuario>();
 	}
 	
 	public String getNome() {
@@ -47,7 +47,6 @@ public abstract class Evento implements Agendamento {
 		this.data = LocalDate.parse(data, formatter);
 	}
 	
-	
 	public Usuario getOrganizador() {
 		return organizador;
 	}
@@ -57,13 +56,20 @@ public abstract class Evento implements Agendamento {
 	}
 	
 	public void addParticipante(Usuario participante) {
+		if (participante == this.organizador) {
+			throw new RuntimeException("O participante informado é o organizador do evento.");
+		}
 		this.participantes.add(participante);
 	}
 
 	@Override
 	public String toString() {
-		return "Evento [nome=" + nome + ", data=" + data + ", organizador=" + organizador + "]";
+		return "Evento [nome=" + nome + ", data=" + data +
+				", organizador=" + organizador + 
+				", participantes=" + participantes +
+				"]";
 	}
+
 	
 		
 }

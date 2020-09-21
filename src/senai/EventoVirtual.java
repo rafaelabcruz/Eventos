@@ -8,7 +8,7 @@ public class EventoVirtual extends Evento {
 	private String url;
 
 	public EventoVirtual(String nome, LocalDate data, Usuario organizador, String url) {
-		super(nome, data, organizador);
+		super(nome, data, organizador, participantes);
 		this.url = url;
 	}
 
@@ -22,9 +22,11 @@ public class EventoVirtual extends Evento {
 
 	@Override
 	public String toString() {
-		return "Evento [nome=" + getNome() + ", data=" + getData() + ", organizador=" + getOrganizador() + "]";
+		return "Evento [nome=" + getNome() + ", data=" + getData() + 
+				", organizador=" + getOrganizador() +
+				", participantes=" + participantes +
+				"]";
 	}
-	
 	
 	
 }

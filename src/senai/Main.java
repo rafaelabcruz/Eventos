@@ -13,7 +13,6 @@ public class Main {
 		System.out.println("--- Evento 1 ---");
 		EventoPresencial evento1 = new EventoPresencial("Java for Dummies", 
 				LocalDate.of(2020, 9, 10), usuario1, "SENAI/SC", 20);
-		evento1.addParticipante(usuario2);
 		
 		//evento1.setData(LocalDate.of(2020, 10, 5));
 		evento1.setData("12/10/2020");
@@ -23,7 +22,7 @@ public class Main {
 		EventoVirtual evento2 = new EventoVirtual("PostgreSQL for Dummies", 
 				LocalDate.of(2020, 9, 10), usuario2 , 
 				"http://eventovirtual.org.br/123" );
-		evento2.addParticipante(usuario2);
+		
 		System.out.println(evento2);
 			
 		System.out.println("--- Compromisso ---");

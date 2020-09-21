@@ -10,7 +10,7 @@ public class EventoPresencial extends Evento{
 	
 	public EventoPresencial(String nome, LocalDate data, Usuario organizador, String localizacao,
 			int capacidadeMaxima) {
-		super(nome, data, organizador);
+		super(nome, data, organizador, participantes);
 		this.localizacao = localizacao;
 		this.capacidadeMaxima = capacidadeMaxima;
 	}
@@ -41,7 +41,10 @@ public class EventoPresencial extends Evento{
 
 	@Override
 	public String toString() {
-		return "Evento [nome=" + getNome() + ", data=" + getData() + ", organizador=" + getOrganizador() + "]";
+		return "Evento [nome=" + getNome() + ", data=" + getData() + 
+				", organizador=" + getOrganizador() + 
+				", participantes =" + participantes +
+				"]";
 	}
 
 	
